@@ -1,9 +1,9 @@
 //const localhost = 'http://localhost:3000';
-const localhost= 'https://apitopicos-97y4.onrender.com';
+//const localhost= 'https://apitopicos-97y4.onrender.com';
 
 async function fetchUsers() {
     try {
-        const response = await fetch(localhost);
+        const response = await fetch('https://apitopicos-97y4.onrender.com');
         const users = await response.json();
         const usersDiv = document.getElementById('users');
         usersDiv.innerHTML = ''; // Limpiar el contenido anterior
@@ -27,7 +27,7 @@ async function addUser() {
     const nombre = document.getElementById('nombre').value;
     if (!nombre) return alert('Por favor ingrese un nombre');
     try {
-        const response = await fetch(localhost, {
+        const response = await fetch('https://apitopicos-97y4.onrender.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ async function addUser() {
 
 async function deleteUser(id) {
     try {
-        const response = await fetch(localhost, {
+        const response = await fetch('https://apitopicos-97y4.onrender.com', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ function showEditUser(id, currentName) {
 
 async function editUser(id, nombre) {
     try {
-        const response = await fetch(localhost, {
+        const response = await fetch('https://apitopicos-97y4.onrender.com', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
